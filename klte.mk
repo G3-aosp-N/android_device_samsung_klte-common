@@ -74,6 +74,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/lge/g3-common/apns-conf.xml:system/etc/apns-conf.xml
 
+# Glove mode
+PRODUCT_PACKAGES += \
+    DeviceSettings
+
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
