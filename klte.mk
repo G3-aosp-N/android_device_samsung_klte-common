@@ -49,7 +49,7 @@ PRODUCT_PACKAGES += \
     masquerade \
     OTAUpdates \
     Stk \
-    Substratum \
+    masquerade \
     tinymix \
     messaging \
     CellBroadcastReceiver \
@@ -70,9 +70,26 @@ PRODUCT_PACKAGES += \
     fsck.ntfs \
     mount.ntfs
 
++# Enable Google Assistant on the G3.
+PRODUCT_PROPERTY_OVERRIDES += \
+   ro.opa.eligible_device=true
+
+
+# Bootanimation
+PRODUCT_COPY_FILES += \
+    device/lge/g3-common/bootanimation.zip:system/media/bootanimation.zip
+
+# Substratum Verified
+PRODUCT_PROPERTY_OVERRIDES := \
+    ro.substratum.verified=true
+
+PRODUCT_PROPERTY_OVERRIDES := \
+    ro.opa.eligible_device=true
+
+
 # World APN list
 PRODUCT_COPY_FILES += \
-    device/lge/g3-common/apns-conf.xml:system/etc/apns-conf.xml
+    device/samsung/klte-common/apns-conf.xml:system/etc/apns-conf.xml
 
 # Glove mode
 PRODUCT_PACKAGES += \
