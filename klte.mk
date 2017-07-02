@@ -39,73 +39,6 @@ $(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk
 
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
 
-# AOSP Apps
-PRODUCT_PACKAGES += \
-    BluetoothExt \
-    LatinIME \
-    Launcher3 \
-    LiveWallpapers \
-    LiveWallpapersPicker \
-    OTAUpdates \
-    Stk \
-    tinymix \
-    messaging \
-    CellBroadcastReceiver \
-    Exchange2
-
-# Extra tools AOSP
-PRODUCT_PACKAGES += \
-    e2fsck \
-    mke2fs \
-    tune2fs \
-    mount.exfat \
-    fsck.exfat \
-    mkfs.exfat \
-    mkfs.f2fs \
-    fsck.f2fs \
-    fibmap.f2fs \
-    mkfs.ntfs \
-    fsck.ntfs \
-    mount.ntfs
-
-# Enable Google Assistant on the klte.
-PRODUCT_PROPERTY_OVERRIDES += \
-   ro.opa.eligible_device=true
-
-
-# Bootanimation
-PRODUCT_COPY_FILES += \
-    device/samsung/klte-common/bootanimation.zip:system/media/bootanimation.zip
-
-# World APN list
-PRODUCT_COPY_FILES += \
-    device/samsung/klte-common/apns-conf.xml:system/etc/apns-conf.xml
-
-# Glove mode
-PRODUCT_PACKAGES += \
-    DeviceSettings
-
-# Enable SIP+VoIP on all targets
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
-
-# Stagefright FFMPEG plugin
-PRODUCT_PACKAGES += \
-    libffmpeg_extractor \
-    libffmpeg_omx \
-    media_codecs_ffmpeg.xml
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    media.sf.omx-plugin=libffmpeg_omx.so \
-    media.sf.extractor-plugin=libffmpeg_extractor.so
-
-# Telephony packages
-PRODUCT_PACKAGES += \
-    telephony-ext
-
-PRODUCT_BOOT_JARS += \
-    telephony-ext
-
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
@@ -146,10 +79,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fingerprintd \
     fingerprint.msm8974
-
-# FlipFlap
-PRODUCT_PACKAGES += \
-    FlipFlap
 
 # IPv6 tethering
 PRODUCT_PACKAGES += \
